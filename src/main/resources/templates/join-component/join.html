@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:insert="~{fragments/header::head}"></div>
+<div th:insert="~{fragments/header::header}"></div>
+
+<body>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <form id="join-form" method="post" th:action="@{/join}" enctype="multipart/form-data"
+            class="d-flex flex-wrap flex-column justify-content-center align-item-center border border-rad px-5 mx-5"
+            style="height: 50%;">
+        <div>
+          <h1 class="main-name">회원가입</h1>
+          <hr/>
+        </div>
+
+        <div class="mb-3">
+          <label for="id">아이디</label>
+          <input type="text" id="id" name="id" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="pwd">비밀번호</label>
+          <input type="password" id="pwd" name="pwd" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="rePwd">비밀번호 확인</label>
+          <input type="password" id="rePwd" name="rePwd" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success"> 가입 </button>
+      </form>
+    </div>
+  </div>
+</body>

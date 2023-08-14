@@ -7,12 +7,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class LoginVO {
+public class UserVO {
 
-  public String id;
+  int seq;
 
-  public String pwd;
+  String id;
 
-  public int is_leave;
-  
+  String pwd;
+
+  int isLeave;
+
 }

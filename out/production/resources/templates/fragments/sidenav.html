@@ -1,0 +1,29 @@
+<section class="nav-container">
+    <div class="none">
+
+    </div>
+    <div class="sub">
+        <div class="none">
+
+        </div>
+
+        <div class="none">
+
+        </div>
+
+        <div class="sub-select" id="bucket">
+            <div class="sub-txt roboto">
+                BUCKET
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" nonce="{{ $_SERVER['CSP_TOKEN'] }}">
+
+    let subElement = document.getElementById("bucket");
+    subElement.addEventListener("click", function () {
+        location.href = "/dashboard";
+    });
+
+</script>

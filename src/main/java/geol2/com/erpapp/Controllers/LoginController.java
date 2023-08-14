@@ -1,6 +1,5 @@
 package geol2.com.erpapp.Controllers;
 
-import geol2.com.erpapp.VO.LoginVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,7 @@ public class LoginController {
   }
 
   @PostMapping("/login")
-  public void postLogin(@ModelAttribute LoginVO login) {
-    System.out.println(login.toString());
+  public void postLogin() {
+
   }
 }
