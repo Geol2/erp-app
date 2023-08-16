@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "yeongsung";
+  src: url(/BMYEONSUNG.ttf) format('truetype');
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+hr {
+  margin: 0 !important;
+}
+
+.main-name {
+  font-family: 'yeongsung', sans-serif;
+  font-size: calc(2.0rem + .6vw);
+}
+
+.sans-kr {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: calc(0.5rem + .6vw);
+}

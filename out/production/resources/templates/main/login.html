@@ -1,52 +1,31 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <div th:insert="~{fragments/header::head}"></div>
-<div th:insert="~{fragments/header::header}"></div>
-
-<style>
-  @font-face {
-    font-family: "yeongsung";
-    src: url(/BMYEONSUNG.ttf) format('truetype');
-  }
-
-  .main-name {
-    font-family: 'yeongsung', sans-serif;
-    font-size: calc(2.0rem + .6vw);
-  }
-
-  .id {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: calc(0.5rem + .6vw);
-  }
-
-  .pwd {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: calc(0.5rem + .6vw);
-  }
-</style>
+<div th:replace="~{fragments/header::header}"></div>
 
 <body>
-  <div class="">
-    <div class="container h-100">
-      <div class="row h-100 justify-content-center align-items-center">
+  <div class="container h-100 px-5">
+    <div class="px-5 mx-5">
+      <div class="row h-100 justify-content-center align-items-center px-5 mx-5">
         <form id="login-form" method="post" th:action="@{/login}" enctype="multipart/form-data"
-              class="d-flex flex-wrap flex-column justify-content-center align-item-center border border-rad px-5 mx-5"
+              class="d-flex flex-wrap flex-column justify-content-center align-item-center border px-5 mx-5"
               style="height: 50%;">
           <div>
-            <h1 class="main-name">피해욥!</h1>
+            <h1 class="main-name">로그인</h1>
             <hr/>
           </div>
 
           <div class="mb-3">
-            <label for="id" class="id">아이디</label>
+            <label for="id" class="sans-kr m-1">아이디</label>
             <input type="text" id="id" name="id" class="form-control" />
           </div>
 
           <div class="mb-3">
-            <label for="pwd" class="pwd">패스워드</label>
+            <label for="pwd" class="sans-kr m-1">패스워드</label>
             <input type="password" id="pwd" name="pwd" class="form-control"  />
           </div>
+          <hr/>
 
-          <button type="submit" class="btn btn-success">로그인</button>
+          <button type="submit" class="btn btn-success shadow-sm my-3">로그인</button>
           <a class="btn btn-link" href="/join">회원가입</a>
         </form>
       </div>
