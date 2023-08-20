@@ -17,4 +17,9 @@ public class UserVO {
 
   int isLeave;
 
+  String createdAt;
+
+  String updatedAt;
+
+  String deletedAt;
 }
