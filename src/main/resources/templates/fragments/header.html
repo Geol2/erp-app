@@ -49,13 +49,17 @@
                 <a class="main-name noto-sans-kr" href="/static"></a>
             </span>
 
-            <div>
+            <div th:if="${sessionCreatedAt == null}">
                 <a class="text-dark text-decoration-none mx-2" th:href="@{/login}">
                     로그인
                 </a>
                 <a class="text-dark text-decoration-none mx-2" th:href="@{/join}">
                     회원가입
                 </a>
+            </div>
+            <div th:if="${sessionCreatedAt != null}">
+                <a class="text-dark text-decoration-none mx-2" th:href="@{/my}" th:text="${sessionId} + ' 님!'"></a>
+                <a class="text-dark text-decoration-none mx-2" th:href="@{/logout}" th:text="'로그아웃'"></a>
             </div>
         </div>
 

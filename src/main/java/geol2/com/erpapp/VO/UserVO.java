@@ -15,7 +15,7 @@ public class UserVO {
 
   String pwd;
 
-  int isLeave;
+  int isLeave; // 0 : 회원, 1: 탈퇴
 
   String createdAt;
 

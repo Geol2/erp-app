@@ -1,6 +1,6 @@
 @font-face {
   font-family: "yeongsung";
-  src: url(/BMYEONSUNG.ttf) format('truetype');
+  src: url('/BMYEONSUNG.ttf') format('truetype');
 }
 
 p {

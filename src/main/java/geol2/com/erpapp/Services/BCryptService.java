@@ -16,4 +16,10 @@ public class BCryptService {
     return new BCryptPasswordEncoder(strength).encode(planeText);
   }
 
+  public boolean matches(String planeText, String getPassword) {
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    return encoder.matches(planeText, getPassword);
+  }
+
 }

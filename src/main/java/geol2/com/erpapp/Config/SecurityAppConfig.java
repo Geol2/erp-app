@@ -16,16 +16,19 @@ public class SecurityAppConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((requests) -> requests
-            .requestMatchers("/", "/home", "/join", "/*.ttf",
-                "*.ico", "/css/*").permitAll()
-            .anyRequest()
-            .authenticated()
-        )
-        .formLogin((form) -> form
-            .loginPage("/login")
-            .permitAll()
-        )
-        .logout((logout) -> logout.permitAll());
+      .requestMatchers("/", "/home", "/join", "*.ttf", "*.ico", "/css/*",
+        "/login/*", "/error", "/logout").permitAll()
+        .anyRequest()
+        .authenticated()
+      )
+      .formLogin((form) -> form
+        .loginPage("/login")
+        .loginProcessingUrl("/login")
+        .defaultSuccessUrl("/")
+        .failureUrl("/error?msg=login")
+        .permitAll()
+      )
+      .logout((logout) -> logout.permitAll());
 
     return http.build();
   }
@@ -33,11 +36,11 @@ public class SecurityAppConfig {
   @Bean
   public UserDetailsService userDetailsService() {
     UserDetails user =
-        User.withDefaultPasswordEncoder()
-            .username("id")
-            .password("pwd")
-            .roles("USER")
-            .build();
+      User.withDefaultPasswordEncoder()
+        .username("id")
+        .password("pwd")
+        .roles("USER")
+        .build();
 
     return new InMemoryUserDetailsManager(user);
   }
