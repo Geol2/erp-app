@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,7 +18,7 @@ public class SecurityAppConfig {
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((requests) -> requests
       .requestMatchers("/", "/home", "/join", "*.ttf", "*.ico", "/css/*",
-        "/login/*", "/error", "/logout").permitAll()
+        "/login/*", "/error", "/logout", "/live").permitAll()
         .anyRequest()
         .authenticated()
       )
@@ -28,7 +29,7 @@ public class SecurityAppConfig {
         .failureUrl("/error?msg=login")
         .permitAll()
       )
-      .logout((logout) -> logout.permitAll());
+      .logout(LogoutConfigurer::permitAll);
 
     return http.build();
   }
