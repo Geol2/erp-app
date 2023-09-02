@@ -1,4 +1,4 @@
-package geol2.com.erpapp.VO;
+package geol2.com.erpapp.Domain.user;
 
 import lombok.Getter;
 import lombok.Setter;

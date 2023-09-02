@@ -1,6 +1,6 @@
 package geol2.com.erpapp.Services;
 
-import geol2.com.erpapp.VO.UserVO;
+import geol2.com.erpapp.Domain.user.UserVO;
 import java.util.List;
 
 public interface JoinService {

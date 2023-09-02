@@ -1,6 +1,5 @@
-package geol2.com.erpapp.VO;
+package geol2.com.erpapp.Domain.live;
 
-import jdk.jfr.Timestamp;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

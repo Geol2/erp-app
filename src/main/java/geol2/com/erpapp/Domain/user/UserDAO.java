@@ -1,7 +1,5 @@
-package geol2.com.erpapp.DAO;
+package geol2.com.erpapp.Domain.user;
 
-import geol2.com.erpapp.Services.BCryptService;
-import geol2.com.erpapp.VO.UserVO;
 import geol2.com.erpapp.db.JDBCUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

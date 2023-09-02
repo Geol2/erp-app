@@ -2,7 +2,7 @@ package geol2.com.erpapp.Controllers;
 
 import geol2.com.erpapp.Services.BCryptService;
 import geol2.com.erpapp.Services.JoinServiceImpl;
-import geol2.com.erpapp.VO.UserVO;
+import geol2.com.erpapp.Domain.user.UserVO;
 
 import geol2.com.erpapp.Services.form.JoinForm;
 import org.springframework.beans.factory.annotation.Autowired;

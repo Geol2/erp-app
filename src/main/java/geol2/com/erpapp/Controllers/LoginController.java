@@ -1,9 +1,9 @@
 package geol2.com.erpapp.Controllers;
 
-import geol2.com.erpapp.DAO.UserDAO;
+import geol2.com.erpapp.Domain.user.UserDAO;
 import geol2.com.erpapp.Services.BCryptService;
 import geol2.com.erpapp.Services.form.LoginForm;
-import geol2.com.erpapp.VO.UserVO;
+import geol2.com.erpapp.Domain.user.UserVO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;

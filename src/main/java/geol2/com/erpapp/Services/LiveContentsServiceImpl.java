@@ -1,7 +1,7 @@
 package geol2.com.erpapp.Services;
 
-import geol2.com.erpapp.DAO.LiveContentDAO;
-import geol2.com.erpapp.VO.LiveContentVO;
+import geol2.com.erpapp.Domain.live.LiveContentDAO;
+import geol2.com.erpapp.Domain.live.LiveContentVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

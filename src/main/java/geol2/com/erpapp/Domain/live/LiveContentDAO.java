@@ -1,6 +1,5 @@
-package geol2.com.erpapp.DAO;
+package geol2.com.erpapp.Domain.live;
 
-import geol2.com.erpapp.VO.LiveContentVO;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;

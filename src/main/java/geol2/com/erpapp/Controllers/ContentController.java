@@ -1,9 +1,8 @@
 package geol2.com.erpapp.Controllers;
 
 import geol2.com.erpapp.Services.LiveContentsServiceImpl;
-import geol2.com.erpapp.VO.LiveContentVO;
+import geol2.com.erpapp.Domain.live.LiveContentVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
