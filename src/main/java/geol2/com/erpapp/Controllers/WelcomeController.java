@@ -1,7 +1,11 @@
 package geol2.com.erpapp.Controllers;
 
+import geol2.com.erpapp.Domain.user.UserVO;
 import geol2.com.erpapp.Services.LiveContentsServiceImpl;
 import geol2.com.erpapp.Domain.live.LiveContentVO;
+import geol2.com.erpapp.Session.SessionManager;
+import jakarta.servlet.http.HttpServletRequest;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +20,15 @@ public class WelcomeController {
   @Autowired
   LiveContentsServiceImpl liveContentsService;
 
+  @Autowired
+  private SessionManager sessionManager;
+
   @GetMapping("/")
-  public ModelAndView welcome(@SessionAttribute(name="id", required = false) String id,
-                              @SessionAttribute(name="isLeave", required = false) String isLeave,
-                              @SessionAttribute(name="createdAt", required = false) String createdAt,
-                              @SessionAttribute(name="updatedAt", required = false) String updatedAt) {
+  public ModelAndView welcome(HttpServletRequest httpServletRequest) {
+
+    // 세션 관리자 정보 조회
+    Object session = sessionManager.getSession(httpServletRequest);
+
     ModelAndView mov = new ModelAndView("main/main");
 
     // 게시글 전체글을 가져와서 추가함
@@ -29,10 +37,7 @@ public class WelcomeController {
 
     mov.addObject("liveContentList", liveContentList);
     mov.addObject("liveContentListCount", liveContentList.size());
-    mov.addObject("sessionId", id);
-    mov.addObject("sessionIsLeave", isLeave);
-    mov.addObject("sessionCreatedAt", createdAt);
-    mov.addObject("sessionUpdatedAt", updatedAt);
+    mov.addObject("sessionUser", session);
     return mov;
   }
 }

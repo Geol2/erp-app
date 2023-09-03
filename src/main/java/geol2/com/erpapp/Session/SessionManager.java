@@ -3,17 +3,19 @@ package geol2.com.erpapp.Session;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class SessionManager {
 
     public static final String SESSION_COOKIE_NAME = "mySessionId";
 
-    private Map<String, Object> sessionStore = new ConcurrentHashMap<>();
+    private final Map<String, Object> sessionStore = new ConcurrentHashMap<>();
 
     /*
     * 세션 생성
@@ -24,6 +26,8 @@ public class SessionManager {
         sessionStore.put(sessionId, value);
 
         Cookie mySessionCookie = new Cookie(SESSION_COOKIE_NAME, sessionId);
+        mySessionCookie.setPath("/");
+
         response.addCookie(mySessionCookie);
     }
 

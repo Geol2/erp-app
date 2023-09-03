@@ -1,5 +1,6 @@
 package geol2.com.erpapp.Domain.user;
 
+import geol2.com.erpapp.Services.BCryptService;
 import geol2.com.erpapp.db.JDBCUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserDAO {
+
+  private BCryptService bCryptService = new BCryptService();
 
   private Connection conn = null;
   private PreparedStatement stmt = null;
@@ -53,16 +56,18 @@ public class UserDAO {
       rs = stmt.executeQuery();
 
       while(rs.next()) {
-        // String userPassword = rs.getString(3);
-        // System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
-        // BCryptService bCryptService = new BCryptService();
-        // isMatch = bCryptService.matches( vo.getPwd(), userPassword);
+        String userPassword = rs.getString(3);
+        System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
+        boolean isMatch = bCryptService.matches( vo.getPwd(), userPassword);
+        System.out.println(isMatch);
 
-        getUser.setSeq( rs.getInt(1) );
-        getUser.setId( rs.getString(2) );
-        getUser.setCreatedAt(rs.getString(5));
-        getUser.setUpdatedAt(rs.getString(6));
+        if(isMatch) {
+          getUser.setSeq(rs.getInt(1));
+          getUser.setId(rs.getString(2));
 
+          getUser.setCreatedAt(rs.getString(5));
+          getUser.setUpdatedAt(rs.getString(6));
+        }
         break;
       }
 

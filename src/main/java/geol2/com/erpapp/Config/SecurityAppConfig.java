@@ -18,7 +18,7 @@ public class SecurityAppConfig {
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests((requests) -> requests
       .requestMatchers("/", "/home", "/join", "*.ttf", "*.ico", "/css/*",
-        "/login/*", "/error", "/logout", "/live").permitAll()
+        "/login/*", "/error", "/logout", "/live", "/my").permitAll()
         .anyRequest()
         .authenticated()
       )
